@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 function AddTask() {
   const [text, setText] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/task/", {
+      const response = await fetch(apiUrl + "/task/", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

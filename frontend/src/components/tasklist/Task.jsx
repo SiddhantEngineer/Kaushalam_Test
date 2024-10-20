@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 function Task() {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch("http://localhost:3000/task/", {
+      const response = await fetch(apiUrl + "/task/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
