@@ -14,6 +14,7 @@ function Task() {
       });
       const data = await response.json();
       console.log(data);
+      setTasks(data);
     } catch (error) {
       console.log("fetchtasks error: " + error);
     }
@@ -23,7 +24,13 @@ function Task() {
     fetchTasks();
   }, []);
 
-  return <div>Task</div>;
+  return (
+    <div>
+      {tasks.map((e) => (
+        <div>{e.text}</div>
+      ))}
+    </div>
+  );
 }
 
 export default Task;
