@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import Task from "../components/tasklist/Task";
-import AddTask from "../components/tasklist/AddTask";
+import { AuthContext } from "../../context/AuthContext";
+import Task from "../../components/tasklist/Task";
+import AddTask from "../../components/tasklist/AddTask";
 
 function Home() {
   const { logout } = useContext(AuthContext);

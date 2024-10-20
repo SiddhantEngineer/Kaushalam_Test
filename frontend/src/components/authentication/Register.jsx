@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./authentication.css";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -35,8 +36,9 @@ function Login() {
   };
 
   return (
-    <div onSubmit={handleSubmit}>
-      <form>
+    <div className="auth-container">
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit} className="auth-form">
         <input
           type="text"
           placeholder="Enter Username"
@@ -56,6 +58,7 @@ function Login() {
         <button type="submit">Register</button>
         <div style={{ color: "red" }}>{error}</div>
       </form>
+      already have a account? <a href="/login">Login here</a>
     </div>
   );
 }
